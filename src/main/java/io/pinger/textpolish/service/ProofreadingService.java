@@ -2,6 +2,7 @@ package io.pinger.textpolish.service;
 
 import io.pinger.textpolish.dto.ProofreadResponseDto;
 import io.pinger.textpolish.dto.TextPolishRequestDto;
+import jakarta.validation.constraints.NotNull;
 
 public interface ProofreadingService {
 
@@ -25,10 +26,14 @@ public interface ProofreadingService {
 
     /**
      * This method proofreads the specified polish request, and returns the proofread content.
+     * <p>
+     * If the communication with the proofreading service fails, or an invalid response is
+     * returned, an exception will be thrown and handled by spring and displayed instead.
      *
      * @param requestDto the validated polish request
      * @return the proofread content
      */
+    @NotNull
     ProofreadResponseDto proofreadContent(TextPolishRequestDto requestDto);
 
 }
