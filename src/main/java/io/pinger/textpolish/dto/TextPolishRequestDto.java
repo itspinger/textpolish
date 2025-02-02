@@ -24,7 +24,7 @@ public class TextPolishRequestDto {
     private String domain;
 
     @NotNull(message = "Content must not be null")
-    @Size(min = 1, max = 30, message = "Size must be between 1 and 30 characters")
+    @Size(min = 1, max = 30, message = "Content size must be between 1 and 30 characters")
     private String content;
 
 }
